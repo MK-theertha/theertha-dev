@@ -148,12 +148,6 @@ export const resume = {
       location: "Kannur, Kerala",
       period: "2015 – 2019",
     },
-    {
-      degree: "PlusTwo (Computer Science)",
-      institution: "JNM GHSS PUDUPPANAM - Vadakara",
-      location: "Kozhikode, Kerala",
-      period: "2013 – 2015",
-    },
   ],
   certifications: [
     "AWS Certified Cloud Practitioner (CLF-C02) Preparation - Udemy",
