@@ -13,13 +13,14 @@ import {
   Mail,
   Phone,
   Sparkles,
-  Star,
   Trophy,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
 import { ContactForm } from "@/components/contact-form";
+import { ProjectGallery } from "@/components/project-gallery";
 import { SectionHeading } from "@/components/section-heading";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { resume } from "@/data/resume";
@@ -366,7 +367,7 @@ export function PortfolioPage() {
 
         <section id="projects" className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
           <SectionHeading eyebrow="Work samples" title="Featured Projects" />
-          <div className="mt-10 grid gap-6 xl:grid-cols-3">
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
             {resume.projects.map((project, index) => (
               <motion.article
                 key={project.name}
@@ -384,15 +385,7 @@ export function PortfolioPage() {
                   <span className="text-xs text-slate-400">{project.period}</span>
                 </div>
 
-                <div className="mt-6 h-40 rounded-[24px] bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),transparent_28%),radial-gradient(circle_at_bottom_right,_rgba(168,85,247,0.2),transparent_36%),linear-gradient(135deg,_rgba(15,23,42,1),_rgba(15,23,42,0.8))] border border-white/10 p-4">
-                  <div className="flex h-full items-end justify-between rounded-[18px] border border-white/8 bg-slate-900/30 p-4">
-                    <div>
-                      <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Platform</p>
-                      <p className="mt-2 text-xl font-semibold text-white">{project.category}</p>
-                    </div>
-                    <Star className="h-5 w-5 text-cyan-300" />
-                  </div>
-                </div>
+                <ProjectGallery project={project} />
 
                 <h3 className="mt-6 text-2xl font-semibold tracking-[-0.05em] text-white">{project.name}</h3>
                 <p className="mt-3 text-base leading-7 text-slate-300">{project.description}</p>

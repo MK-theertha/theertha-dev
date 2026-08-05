@@ -19,6 +19,7 @@ export type ProjectItem = {
   period: string;
   description: string;
   technologies: string[];
+  images?: string[];
 };
 
 export type EducationItem = {
@@ -43,7 +44,7 @@ export const resume = {
     "Senior Full-Stack Software Engineer with around 4 years and 10 months of experience designing, developing, and maintaining scalable web and mobile applications using React.js, React Native, Angular, TypeScript, Node.js, Express.js, MongoDB, and MySQL. Experienced in building RESTful APIs, responsive user interfaces, cloud deployments, CI/CD pipelines, and performance optimization. Strong background in code reviews, technical mentoring, Agile development, and delivering reliable software solutions from design to deployment.",
   stats: [
     { value: 4, suffix: "y 10m", label: "Experience" },
-    { value: 3, suffix: "", label: "Projects" },
+    { value: 2, suffix: "", label: "Projects" },
     { value: 2, suffix: "", label: "Roles at Bititude" },
   ],
   experience: [
@@ -123,14 +124,17 @@ export const resume = {
       description:
         "Developed a scalable workforce management platform with employee workflows, role-based access, REST APIs, authentication, and optimized backend services.",
       technologies: ["React.js", "Angular", "Node.js", "MongoDB", "AWS"],
-    },
-    {
-      name: "AI-Powered Notes Management Platform",
-      category: "AI",
-      period: "Notes App",
-      description:
-        "Built an AI-powered notes application with smart summarization, search capabilities, and AI-driven content enhancement features.",
-      technologies: ["React.js", "Node.js", "OpenAI API"],
+      images: [
+        "/projects/dashboard.png",
+        "/projects/employees.png",
+        "/projects/departments.png",
+        "/projects/leave.png",
+        "/projects/activity.png",
+        "/projects/reports.png",
+        "/projects/dashboard-report.png",
+        "/projects/profile.png",
+        "/projects/settings.png",
+      ],
     },
     {
       name: "Chatbot",
