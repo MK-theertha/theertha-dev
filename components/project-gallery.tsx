@@ -3,7 +3,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, Maximize2, Star, X } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import { createPortal } from "react-dom";
 
 import type { ProjectItem } from "@/data/resume";
@@ -28,11 +28,11 @@ export function ProjectGallery({ project }: { project: ProjectItem }) {
   const isPortrait = project.imageOrientation === "portrait";
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useSyncExternalStore(
+    () => () => {},
+    () => true,
+    () => false
+  );
 
   const hasImages = images.length > 0;
   const showPrev = () => setActiveIndex((i) => (i - 1 + images.length) % images.length);
