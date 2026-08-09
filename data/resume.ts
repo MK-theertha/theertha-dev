@@ -20,6 +20,8 @@ export type ProjectItem = {
   description: string;
   technologies: string[];
   images?: string[];
+  imageOrientation?: "landscape" | "portrait";
+  githubUrl?: string;
 };
 
 export type EducationItem = {
@@ -41,9 +43,9 @@ export const resume = {
   websiteUrl: "https://stevenpopovich.com",
   resumeUrl: "",
   summary:
-    "Senior Full-Stack Software Engineer with around 4 years and 10 months of experience designing, developing, and maintaining scalable web and mobile applications using React.js, React Native, Angular, TypeScript, Node.js, Express.js, MongoDB, and MySQL. Experienced in building RESTful APIs, responsive user interfaces, cloud deployments, CI/CD pipelines, and performance optimization. Strong background in code reviews, technical mentoring, Agile development, and delivering reliable software solutions from design to deployment.",
+    "Senior Full-Stack Software Engineer with nearly 5 years of experience designing, developing, and maintaining scalable web and mobile applications using React.js, React Native, Angular, TypeScript, Node.js, Express.js, MongoDB, and MySQL. Skilled in building RESTful APIs, responsive user interfaces, cloud deployments, CI/CD pipelines, and performance optimization. Experienced in designing scalable architectures, leading feature development, conducting code reviews, mentoring developers, and delivering reliable software solutions across the full software development lifecycle.",
   stats: [
-    { value: 4, suffix: "y 10m", label: "Experience" },
+    { value: 5, suffix: "", label: "Years Experience" },
     { value: 2, suffix: "", label: "Projects" },
     { value: 2, suffix: "", label: "Roles at Bititude" },
   ],
@@ -54,9 +56,9 @@ export const resume = {
       location: "Kozhikode, Kerala",
       period: "2024 – Present",
       responsibilities: [
-        "Lead the design and development of scalable web and mobile applications using React.js, React Native, Angular, TypeScript, Node.js, Express.js, MongoDB, and MySQL.",
+        "Lead the design and development of scalable web and mobile applications using React.js, React Native, Angular, TypeScript, Node.js, Express.js, MongoDB, and MySQL, delivering enterprise solutions across multiple domains.",
         "Design and implement secure RESTful APIs for seamless communication between frontend and backend services.",
-        "Improve application performance by optimizing database queries, backend services, and frontend rendering.",
+        "Improve application performance by optimizing database queries, API response times, and frontend rendering performance.",
         "Conduct code reviews and enforce coding standards to ensure maintainable, high-quality software.",
         "Collaborate with UI/UX designers, QA engineers, and product managers to deliver features in Agile sprints.",
         "Implement authentication, authorization, and security best practices across applications.",
@@ -105,25 +107,22 @@ export const resume = {
     },
   ],
   skills: [
-    { title: "Frontend", items: ["React.js", "Angular", "TypeScript", "JavaScript", "React Native"] },
-    { title: "Backend", items: ["Node.js", "Express.js", "RESTful APIs", "Authentication", "Authorization"] },
-    { title: "Mobile", items: ["React Native", "Cross-platform mobile apps", "Responsive UI"] },
-    { title: "Databases", items: ["MongoDB", "MySQL", "Database optimization", "Query tuning"] },
-    { title: "Cloud", items: ["AWS", "Cloud deployments"] },
-    { title: "DevOps", items: ["Docker", "Kubernetes", "CI/CD pipelines", "Git", "Deployment"] },
-    { title: "Testing", items: ["Jest", "Debugging", "Testing", "Performance optimization"] },
-    { title: "AI", items: ["OpenAI API", "AI-powered features", "AI chatbot"] },
-    { title: "Programming Languages", items: ["Python", "TypeScript", "JavaScript"] },
-    { title: "Tools", items: ["Git", "Docker", "Kubernetes", "Redis", "Technical documentation", "Code review"] },
+    { title: "Frontend", items: ["React.js", "React Native", "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"] },
+    { title: "Backend", items: ["Node.js", "Express.js", "NestJS", "REST APIs"] },
+    { title: "Databases", items: ["MongoDB", "MySQL", "PostgreSQL", "Redis", "Prisma ORM"] },
+    { title: "Testing & Tools", items: ["Jest", "Git", "Figma", "Technical Documentation"] },
+    { title: "Cloud & DevOps", items: ["AWS", "Docker", "Kubernetes", "CI/CD", "GitHub Actions"] },
+    { title: "Soft Skills", items: ["Code Review", "Mentoring", "Problem Solving", "Communication"] },
   ],
   projects: [
     {
-      name: "Enterprise Workforce Management Platform",
+      name: "CoreHR",
       category: "Enterprise",
-      period: "Workforce Platform",
+      period: "Employee Management & Workforce Platform",
       description:
-        "Developed a scalable workforce management platform with employee workflows, role-based access, REST APIs, authentication, and optimized backend services.",
-      technologies: ["React.js", "Angular", "Node.js", "MongoDB", "AWS"],
+        "A full-stack workforce management platform designed for employee lifecycle management, including employee directories, leave workflows, notifications, and role-based access control. Built as a monorepo with a scalable backend and modern React frontend featuring authentication, workflow automation, and production-ready architecture.",
+      technologies: ["React.js", "TypeScript", "Node.js", "Express.js", "Prisma", "PostgreSQL", "Docker", "GitHub Actions"],
+      githubUrl: "https://github.com/MK-theertha/CoreHR",
       images: [
         "/projects/dashboard.png",
         "/projects/employees.png",
@@ -137,12 +136,21 @@ export const resume = {
       ],
     },
     {
-      name: "Chatbot",
-      category: "AI",
-      period: "Document Q&A",
+      name: "Elara",
+      category: "Mobile",
+      period: "Productivity App",
       description:
-        "Developed an AI chatbot for document-based question answering with conversational features, authentication, and AI-powered responses.",
-      technologies: ["React.js", "Node.js", "OpenAI API"],
+        "A cross-platform productivity application for managing tasks, calendars, notes, expenses, and shopping lists.",
+      technologies: ["React Native", "Expo", "NestJS", "PostgreSQL", "TypeScript"],
+      githubUrl: "https://github.com/MK-theertha/Elara",
+      imageOrientation: "portrait" as const,
+      images: [
+        "/projects/mob-home.png",
+        "/projects/mob-tasks.png",
+        "/projects/mob-calender.png",
+        "/projects/mob-expenses.png",
+        "/projects/mob-settings.png",
+      ],
     },
   ],
   education: [
@@ -151,6 +159,12 @@ export const resume = {
       institution: "College of Engineering Thalassery",
       location: "Kannur, Kerala",
       period: "2015 – 2019",
+    },
+    {
+      degree: "Plus Two (Computer Science)",
+      institution: "JNM GHSS Puduppanam - Vadakara",
+      location: "Kozhikode, Kerala",
+      period: "2013 – 2015",
     },
   ],
   certifications: [
@@ -165,11 +179,9 @@ export const resume = {
     "Mentored junior developers through code reviews and technical guidance.",
     "Improved application performance by optimizing frontend rendering and backend database queries.",
   ],
-  languages: ["English", "Malayalam", "Hindi (Read and write)"],
+  languages: ["English", "Malayalam"],
   contactMethods: [
     { label: "Email", value: "theerthamk1998@gmail.com", href: "mailto:theerthamk1998@gmail.com" },
-    { label: "Phone", value: "+971 54 171 7980", href: "tel:+971541717980" },
     { label: "LinkedIn", value: "linkedin.com/in/theertha-m-k-94abb91b5", href: "https://linkedin.com/in/theertha-m-k-94abb91b5" },
-    { label: "Website", value: "stevenpopovich.com", href: "https://stevenpopovich.com" },
   ],
 };

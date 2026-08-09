@@ -25,6 +25,7 @@ function ProjectPlaceholder({ category }: { category: string }) {
 
 export function ProjectGallery({ project }: { project: ProjectItem }) {
   const images = project.images ?? [];
+  const isPortrait = project.imageOrientation === "portrait";
   const [activeIndex, setActiveIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -133,13 +134,14 @@ export function ProjectGallery({ project }: { project: ProjectItem }) {
                   onClick={() => setActiveIndex(i)}
                   aria-label={`Show screenshot ${i + 1}`}
                   className={cn(
-                    "relative h-14 w-20 flex-shrink-0 overflow-hidden rounded-lg border transition",
+                    "relative flex-shrink-0 overflow-hidden rounded-lg border transition",
+                    isPortrait ? "h-20 w-11" : "h-14 w-20",
                     i === activeIndex
                       ? "border-cyan-400/70 ring-2 ring-cyan-400/40"
                       : "border-white/10 opacity-50 hover:opacity-100"
                   )}
                 >
-                  <Image src={src} alt="" fill sizes="80px" className="object-cover object-top" />
+                  <Image src={src} alt="" fill sizes="80px" className={isPortrait ? "object-contain bg-slate-900/60" : "object-cover object-top"} />
                 </button>
               ))}
             </div>
@@ -155,7 +157,10 @@ export function ProjectGallery({ project }: { project: ProjectItem }) {
         <button
           type="button"
           onClick={() => setLightboxOpen(true)}
-          className="group/gallery relative block aspect-video w-full overflow-hidden rounded-[24px] border border-white/10 bg-slate-900/40"
+          className={cn(
+            "group/gallery relative block overflow-hidden rounded-[24px] border border-white/10 bg-slate-900/40",
+            isPortrait ? "mx-auto aspect-[9/16] w-full max-w-[240px]" : "aspect-video w-full"
+          )}
           aria-label={`View screenshots for ${project.name}`}
         >
           <Image
@@ -163,7 +168,10 @@ export function ProjectGallery({ project }: { project: ProjectItem }) {
             alt={`${project.name} screenshot ${activeIndex + 1} of ${images.length}`}
             fill
             sizes="(min-width: 1280px) 420px, 90vw"
-            className="object-cover object-top transition duration-500 group-hover/gallery:scale-[1.03]"
+            className={cn(
+              "transition duration-500 group-hover/gallery:scale-[1.03]",
+              isPortrait ? "object-contain p-6" : "object-cover object-top"
+            )}
             priority={activeIndex === 0}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 transition group-hover/gallery:opacity-100" />
@@ -176,7 +184,7 @@ export function ProjectGallery({ project }: { project: ProjectItem }) {
         </button>
 
         {images.length > 1 && (
-          <div className="mt-2.5 flex gap-2 overflow-x-auto pb-1">
+          <div className={cn("mt-2.5 flex gap-2 overflow-x-auto pb-1", isPortrait && "justify-center")}>
             {images.map((src, i) => (
               <button
                 key={src}
@@ -187,13 +195,14 @@ export function ProjectGallery({ project }: { project: ProjectItem }) {
                 }}
                 aria-label={`Show screenshot ${i + 1}`}
                 className={cn(
-                  "relative h-12 w-16 flex-shrink-0 overflow-hidden rounded-lg border transition",
+                  "relative flex-shrink-0 overflow-hidden rounded-lg border transition",
+                  isPortrait ? "h-16 w-9" : "h-12 w-16",
                   i === activeIndex
                     ? "border-cyan-400/70 ring-2 ring-cyan-400/40"
                     : "border-white/10 opacity-60 hover:opacity-100"
                 )}
               >
-                <Image src={src} alt="" fill sizes="64px" className="object-cover object-top" />
+                <Image src={src} alt="" fill sizes="64px" className={isPortrait ? "object-contain bg-slate-900/60" : "object-cover object-top"} />
               </button>
             ))}
           </div>

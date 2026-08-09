@@ -6,7 +6,6 @@ import {
   Award,
   Briefcase,
   ChevronRight,
-  Download,
   ExternalLink,
   GraduationCap,
   MapPin,
@@ -22,7 +21,6 @@ import { useEffect, useState } from "react";
 import { ContactForm } from "@/components/contact-form";
 import { ProjectGallery } from "@/components/project-gallery";
 import { SectionHeading } from "@/components/section-heading";
-import { ThemeToggle } from "@/components/theme-toggle";
 import { resume } from "@/data/resume";
 import { cn } from "@/lib/utils";
 
@@ -163,10 +161,6 @@ export function PortfolioPage() {
               </Link>
             ))}
           </nav>
-
-          <div className="flex items-center gap-3">
-            <ThemeToggle />
-          </div>
         </div>
       </header>
 
@@ -182,33 +176,22 @@ export function PortfolioPage() {
             <div>
               <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-cyan-300">{resume.title}</p>
               <h1 className="max-w-[820px] text-5xl font-semibold tracking-[-0.08em] text-white sm:text-6xl lg:text-[7rem] lg:leading-[0.92]">
-                Building <span className="text-gradient">scalable</span>
-                <span className="block text-slate-200">digital products</span>
-                <span className="block text-slate-300">from concept to deployment.</span>
+                Engineering <span className="text-gradient">full-stack</span>
+                <span className="block text-slate-200">products that</span>
+                <span className="block text-slate-300">scale.</span>
               </h1>
 
               <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-                I&apos;m {resume.name.replace("THEERTHA M K", "Theertha M K")}, a software engineer with around 4 years and 10 months of experience creating responsive web apps, mobile experiences, secure APIs, and cloud-powered platforms using React, Node.js, TypeScript, Angular, and modern AWS workflows.
+                I&apos;m {resume.name.replace("THEERTHA M K", "Theertha M K")}, a software engineer with nearly 5 years of experience creating responsive web apps, mobile experiences, secure APIs, and cloud-powered platforms using React, Node.js, TypeScript, Angular, and modern AWS workflows.
               </p>
 
               <TypingText items={heroSkills} />
 
               <div className="mt-9 flex flex-wrap gap-4">
                 <Link
-                  href={resume.resumeUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Download resume"
-                  className={cn(
-                    "inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 px-6 py-3 text-base font-semibold text-slate-950 shadow-[0_18px_40px_rgba(34,211,238,0.35)] transition hover:brightness-110"
-                  )}
-                >
-                  <Download className="mr-2 h-4 w-4" /> Download Resume
-                </Link>
-                <Link
                   href="#projects"
                   className={cn(
-                    "inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-6 py-3 text-base font-semibold text-white transition hover:bg-white/10"
+                    "inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-violet-500 px-6 py-3 text-base font-semibold text-slate-950 shadow-[0_18px_40px_rgba(34,211,238,0.35)] transition hover:brightness-110"
                   )}
                 >
                   View Projects <ArrowRight className="ml-2 h-4 w-4" />
@@ -398,26 +381,21 @@ export function PortfolioPage() {
                   ))}
                 </div>
 
-                {/* <div className="mt-7 flex flex-wrap gap-3">
-                  <Link
-                    href="#"
-                    aria-label={`GitHub for ${project.name}`}
-                    className={cn(
-                      "inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10"
-                    )}
-                  >
-                    <GithubIcon className="mr-2 h-4 w-4" /> GitHub
-                  </Link>
-                  <Link
-                    href="#"
-                    aria-label={`Demo for ${project.name}`}
-                    className={cn(
-                      "inline-flex items-center justify-center rounded-full border border-cyan-400/20 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-100 transition hover:bg-cyan-500/20"
-                    )}
-                  >
-                    Live Demo <ExternalLink className="ml-2 h-4 w-4" />
-                  </Link>
-                </div> */}
+                {project.githubUrl && (
+                  <div className="mt-7 flex flex-wrap gap-3">
+                    <Link
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      aria-label={`GitHub for ${project.name}`}
+                      className={cn(
+                        "inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white transition hover:bg-white/10"
+                      )}
+                    >
+                      <GithubIcon className="mr-2 h-4 w-4" /> GitHub
+                    </Link>
+                  </div>
+                )}
               </motion.article>
             ))}
           </div>
@@ -535,9 +513,6 @@ export function PortfolioPage() {
           </div>
 
           <div className="flex items-center gap-3 text-sm text-slate-300">
-            <Link href={resume.resumeUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 hover:border-cyan-400/30 hover:text-cyan-300">
-              <Download className="h-4 w-4" /> Resume
-            </Link>
             <Link href={resume.linkedInUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 hover:border-cyan-400/30 hover:text-cyan-300">
               LinkedIn <ChevronRight className="h-4 w-4" />
             </Link>
