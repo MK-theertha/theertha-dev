@@ -111,7 +111,7 @@ export const resume = {
     },
   ],
   skills: [
-    { title: "Frontend", items: ["React.js", "React Native", "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"] },
+    { title: "Frontend", items: ["React.js", "Next.js", "React Native", "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"] },
     { title: "Backend", items: ["Node.js", "Express.js", "NestJS", "Python", "FastAPI", "REST APIs"] },
     { title: "Databases", items: ["MongoDB", "MySQL", "PostgreSQL", "Redis", "Prisma ORM"] },
     { title: "Testing & Tools", items: ["Jest", "Git", "Figma", "Technical Documentation"] },
