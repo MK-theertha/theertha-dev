@@ -39,6 +39,10 @@ export const resume = {
   location: "Dubai",
   linkedIn: "linkedin.com/in/theertha-m-k-94abb91b5",
   linkedInUrl: "https://linkedin.com/in/theertha-m-k-94abb91b5",
+  githubWork: "github.com/Theertha-mk",
+  githubWorkUrl: "https://github.com/Theertha-mk",
+  githubPersonal: "github.com/MK-theertha",
+  githubPersonalUrl: "https://github.com/MK-theertha",
   website: "stevenpopovich.com",
   websiteUrl: "https://stevenpopovich.com",
   resumeUrl: "",
@@ -108,7 +112,7 @@ export const resume = {
   ],
   skills: [
     { title: "Frontend", items: ["React.js", "React Native", "Angular", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS"] },
-    { title: "Backend", items: ["Node.js", "Express.js", "NestJS", "REST APIs"] },
+    { title: "Backend", items: ["Node.js", "Express.js", "NestJS", "Python", "FastAPI", "REST APIs"] },
     { title: "Databases", items: ["MongoDB", "MySQL", "PostgreSQL", "Redis", "Prisma ORM"] },
     { title: "Testing & Tools", items: ["Jest", "Git", "Figma", "Technical Documentation"] },
     { title: "Cloud & DevOps", items: ["AWS", "Docker", "Kubernetes", "CI/CD", "GitHub Actions"] },
@@ -140,8 +144,8 @@ export const resume = {
       category: "Mobile",
       period: "Productivity App",
       description:
-        "A cross-platform productivity application for managing tasks, calendars, notes, expenses, and shopping lists.",
-      technologies: ["React Native", "Expo", "NestJS", "PostgreSQL", "TypeScript"],
+        "Cross-platform productivity application for managing tasks, calendars, notes, expenses, and shopping lists, enhanced with AI-powered features using the Google Gemini API.",
+      technologies: ["React Native", "Expo", "NestJS", "PostgreSQL", "TypeScript", "Google Gemini API"],
       githubUrl: "https://github.com/MK-theertha/Elara",
       imageOrientation: "portrait" as const,
       images: [
@@ -183,5 +187,7 @@ export const resume = {
   contactMethods: [
     { label: "Email", value: "theerthamk1998@gmail.com", href: "mailto:theerthamk1998@gmail.com" },
     { label: "LinkedIn", value: "linkedin.com/in/theertha-m-k-94abb91b5", href: "https://linkedin.com/in/theertha-m-k-94abb91b5" },
+    { label: "GitHub (Work)", value: "github.com/Theertha-mk", href: "https://github.com/Theertha-mk" },
+    { label: "GitHub (Personal)", value: "github.com/MK-theertha", href: "https://github.com/MK-theertha" },
   ],
 };

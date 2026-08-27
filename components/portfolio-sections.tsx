@@ -481,6 +481,7 @@ export function PortfolioPage() {
                       {item.label === "Phone" && <Phone className="h-4 w-4" />}
                       {item.label === "LinkedIn" && <Briefcase className="h-4 w-4" />}
                       {item.label === "Website" && <ExternalLink className="h-4 w-4" />}
+                      {item.label.startsWith("GitHub") && <GithubIcon className="h-4 w-4" />}
                       <span>{item.value}</span>
                     </a>
                   ))}
@@ -514,6 +515,12 @@ export function PortfolioPage() {
           <div className="flex items-center gap-3 text-sm text-slate-300">
             <Link href={resume.linkedInUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 hover:border-cyan-400/30 hover:text-cyan-300">
               LinkedIn <ChevronRight className="h-4 w-4" />
+            </Link>
+            <Link href={resume.githubWorkUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 hover:border-cyan-400/30 hover:text-cyan-300">
+              GitHub (Work) <ChevronRight className="h-4 w-4" />
+            </Link>
+            <Link href={resume.githubPersonalUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 hover:border-cyan-400/30 hover:text-cyan-300">
+              GitHub (Personal) <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
